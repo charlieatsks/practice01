@@ -21,3 +21,5 @@ uploaded the files , html, css, js files
 05/10/2023
 statistics shows my code consist of mostly html and css
 but i am using javascript in html ..
+17/11/2023
+regular practice is low now i have to increase the frequency 
