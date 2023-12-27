@@ -12,5 +12,4 @@ const date = document.getElementById("date");
     day.innerHTML = weekDays[today.getDay()];
     month.innerHTML = allMonths[today.getMonth()];
     year.innerHTML = today.getFullYear();
-
     
