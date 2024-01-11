@@ -20,7 +20,6 @@ body{
     margin: 5px;
     cursor: pointer;
 }
-
 #toastBox{
     position: absolute;
     bottom: 30px;
@@ -82,5 +81,3 @@ body{
 .toast.invalid::after{
     background: orange;
 }
-
-
