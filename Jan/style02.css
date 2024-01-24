@@ -12,6 +12,9 @@ header{
     position: fixed;
     width: 100%;
     top: 0%;
+    z-index: 1;
+    background-color: #ffebc278;
+    backdrop-filter: blur(20px);
 }
 .box{
     width: 1000px;
@@ -87,6 +90,105 @@ header .menu ul .active{
     grid-template-rows: 300px;
     padding: 50px 0;
 }
+.banner .detail .info,
+.banner .detail .option{
+    padding: 30px;
+}
+.banner .detail .info h2{
+    color: #5b5280;
+    font-weight: bold;
+    font-size: xx-large;
+}
+.banner .detail .info .des{
+    opacity: 0.7;
+}
+.banner .detail .img{
+    background-image: radial-gradient(
+        #f8c697, #fff2d9
+    );
+    border-radius: 50%;
+    transform: rotate(25deg);
+}
+.banner .detail .option .ellipse{
+    width: 30px;
+    height: 30px;
+    margin: 20px 5px 20px 0;
+    display: inline-block;
+    border-radius: 50%;
+}
+.card{
+    background-color: #34332e;
+    color: #fcb116;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.container .list{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+.container .list h2{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.container .list .item{
+    text-align: center;
+    border-radius: 20px;
+    background-image: radial-gradient(#f1d6bc, #fff);
+}
+.container .list .item img{
+    width: 80%;
+    transform: rotate(30deg) translate(20px);
+}
+.container .list .item .content{
+    padding: 50px 0 20px;
+    font-weight: bold;
+}
+footer{
+    width: 1000px;
+    border: 1px solid red;
+    margin: auto;
+    height: 300px;
+    max-width: 100%;
+    position: relative;
+}
+footer .title{
+    background-color: #ffeece57;
+    backdrop-filter: blur(20px);
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    padding: 50px 0 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    border-radius: 40px;
+    z-index: 2;
+}
+footer ul{
+    background-color: #fcb116;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    list-style: none;
+    border-radius: 40px;
+    z-index: 1;
+}
+footer li{
+    padding: 30px;
+    font-weight: bold;
+}
+
+
 
 
 
