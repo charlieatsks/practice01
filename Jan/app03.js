@@ -1,11 +1,9 @@
 // Game Constants and Variables
-
 let direction = {x: 0, y: 0};
 const foodSound = new Audio();
 const gameOverSound = new Audio();
 const moveSound = new Audio();
 const musicSound = new Audio();
-
 let speed = 2;
 let lastPaintTime = 0;
 let snakeArr = [
@@ -14,7 +12,6 @@ let snakeArr = [
 food = {x: 13, y: 15};
 
 // GAME functions
-
 function main(ctime) {
     window.requestAnimationFrame(main);
     console.log(ctime)
@@ -25,17 +22,36 @@ function main(ctime) {
     gameEngine();
 }
 
-function gameEngine(){
-    // part 1:
-    // part 2:
+function isCollide(sarr) {
+    return false;
+}
 
+function gameEngine(){
+    // part 1:Updating the snake array and Food
+
+    if(isCollide(snakeArr)){
+        gameOverSound.play();
+        musicSound.pause();
+        inputDir = {x: 0, y: 0};
+        alert("Game Over. Press any key to play again!");
+        musicSound.play();
+        score = 0;
+    }
+
+    // part 2:Display snake and food
     //display snake
     board.innerHTML = "";
     snakeArr.forEach((e, index) => {
         snakeElement = document.createElement('div');
         snakeElement.style.gridRowStart = e.y;
         snakeElement.style.gridColumnStart = e.x;
-        snakeElement.classList.add('head')
+
+        if(index === 0){
+            snakeElement.classList.add('head');
+        }
+        else{
+            snakeElement.classList.add('snake');
+        }
         board.appendChild(snakeElement);
     });
     // display the food
@@ -45,6 +61,43 @@ function gameEngine(){
     foodElement.classList.add('food')
     board.appendChild(foodElement);
 }
+
+
+
+
+// Main logic starts here 
+
+window.requestAnimationFrame(main);
+window.addEventListener('keydown', e =>{
+    inputDir = {x: 0, y: 1} // start the game
+    moveSound.play();
+    switch (e.key) {
+        case "ArrowUp":
+            console.log("ArrowUp")
+            inputDir.x = 0;
+            inputDir.y = -1;
+            break;
+        case "ArrowDown":
+            console.log("ArrowDown")
+            inputDir.x = 0;
+            inputDir.y = 1;
+            break;
+        case "ArrowLeft":
+            console.log("ArrowLeft")
+            inputDir.x = -1;
+            inputDir.y = 0;
+            break;
+        case "ArrowRight":
+            console.log("ArrowRight")
+            inputDir.x = 1;
+            inputDir.y = 0;
+            break;
+        default:
+            break;
+    }
+});
+
+
 
 
 
