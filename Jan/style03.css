@@ -13,7 +13,6 @@
     align-items: center;
 }
 
-
 #board{
     background: linear-gradient(green, yellow);
     width: 90vmin;
@@ -30,4 +29,12 @@
 
 .food{
     background-color: purple;
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+.snake{
+    background-color: yellow;
+    border: .25vmin solid white;
+    border-radius: 12px;
 }
