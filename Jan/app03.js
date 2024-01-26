@@ -4,11 +4,13 @@ const foodSound = new Audio();
 const gameOverSound = new Audio();
 const moveSound = new Audio();
 const musicSound = new Audio();
-let speed = 2;
+let speed = 19;
+let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [
     {x: 13, y: 15}
-]
+];
+
 food = {x: 13, y: 15};
 
 // GAME functions
@@ -22,19 +24,30 @@ function main(ctime) {
     gameEngine();
 }
 
-function isCollide(sarr) {
+function isCollide(snake) {
+    // if you bump into yoruself
+    for( let i = 1; i < snakeArr.length; i++) {
+        if(snake[i].x === snake[0].x && snake[i].y === snake[0].y){
+            return true;
+        }
+    }
+    // if you bump into the wall 
+    if(snake[0].x >= 18 || snake[0].x <=0 || snake[0].y >= 18 || snake[0].y <=0){
+        return true;
+    }
+
     return false;
 }
 
 function gameEngine(){
     // part 1:Updating the snake array and Food
-
     if(isCollide(snakeArr)){
         gameOverSound.play();
         musicSound.pause();
         inputDir = {x: 0, y: 0};
         alert("Game Over. Press any key to play again!");
-        musicSound.play();
+        snakeArr = [{x: 13, y: 15}];
+        //musicSound.play();
         score = 0;
     }
 
