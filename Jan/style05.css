@@ -158,6 +158,10 @@ ul li {
     position: relative;
 }
 
+ul li:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 .name{
     flex: 1;
 }
@@ -183,6 +187,31 @@ ul li {
 
 .amount.expense {
     color: indianred;
+}
+
+.action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f00;
+    color: #fff;
+    height: 100%;
+    width: 50px;
+    display: grid;
+    place-items: center;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all 400ms;
+}
+
+ul li:hover .action {
+    transform: scaleX(1);
+}
+
+.action svg {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
 }
 
 #status {
