@@ -25,16 +25,18 @@ const resetGame = () => {
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
-        console.log("box was clicked");
+        //console.log("box was clicked");
         //box.innerText = "Shlok" ;
         
         if (turnO) {
             //playerO
             box.innerText = "O";
+            box.classList.remove("colorchange");
             turnO = false;
         } else {
             //playerX
             box.innerText = "X";
+            box.classList.add("colorchange");
             turnO = true;
         }
         box.disabled = true;
@@ -71,7 +73,7 @@ const checkWinner = () => {
 
         if (pos1Val != "" && pos2Val != "" && pos3Val != "" ) {
             if (pos1Val === pos2Val && pos2Val === pos3Val) {
-                console.log("Winner! is ", pos1Val);
+                //console.log("Winner! is ", pos1Val);
                 
                 showWinner(pos1Val);
             }
