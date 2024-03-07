@@ -5,6 +5,7 @@ let msgContainer = document.querySelector(".message");
 let msg = document.querySelector("#msg");
 
 let turnO = true; // playerX , playerO
+let a = 0;  // to count for "Draw"
 
 const winPattens = [
     [0 , 1, 2],
@@ -19,9 +20,10 @@ const winPattens = [
 
 const resetGame = () => {
     turnO = true;
+    a = 0;
     enableBoxes();
     msgContainer.classList.add("hide");
-}
+};
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
@@ -30,40 +32,60 @@ boxes.forEach((box) => {
         
         if (turnO) {
             //playerO
-            box.innerText = "O";
+            box.innerText = "X";
             box.classList.remove("colorchange");
             turnO = false;
         } else {
             //playerX
-            box.innerText = "X";
+            box.innerText = "O";
             box.classList.add("colorchange");
             turnO = true;
-        }
+        } 
+
         box.disabled = true;
-        
-        checkWinner();
+        a++;
+
+        let b = checkWinner();
+
+        if ( a === 9 && !b ) {
+            //console.log("Draw");
+            showDraw();
+        }
+
+        /*
+        drawCountcount++;
+        let isWin = checkWinner();
+        if( drawCountcount === 9 && !isWin) {
+            Drawgame();
+        }*/
     });
 });
+
+const showDraw = () => {
+    msg.innerHTML = `The Match is " Draw ", You both are Loooose. ;) `;
+    msgContainer.classList.remove("hide");
+    disableBoxes();
+};
 
 const disableBoxes = () => {
     for(let box of boxes) {
         box.disabled = true;
     }
-}
+};
 
 const enableBoxes = () => {
     for(let box of boxes) {
         box.disabled = false;
         box.innerText = "";
     }
-}
+};
 
 const showWinner = (winner) => {
     msg.innerText = `Congratulations, Winner is ${winner}`;
     msgContainer.classList.remove("hide");
     
     disableBoxes();
-}
+};
 
 const checkWinner = () => {
     for (let pattern of winPattens) {
@@ -76,6 +98,8 @@ const checkWinner = () => {
                 //console.log("Winner! is ", pos1Val);
                 
                 showWinner(pos1Val);
+
+                return true;
             }
         }
     }
