@@ -23,7 +23,7 @@ const checkValue = () => {
 
     let regexNumber = /^[0-9]+$/;
     if (!loanAmountValue.match(regexNumber)) {
-        loanAmountInput.value = "10000";
+        loanAmountInput.value = "100000";
     }
 
     if (!loanTenureValue.match(regexNumber)) {
@@ -32,7 +32,7 @@ const checkValue = () => {
 
     let regexDecimalNumber = /^(\d*\.)?\d+$/;
     if (!interestRateValue.match(regexDecimalNumber)) {
-        interestRateInput.value = "7.5";
+        interestRateInput.value = "6.5";
     }
 };
 
@@ -102,6 +102,4 @@ const init = () => {
 init();
 
 calculateBtn.addEventListener("click", init);
-
-
 
