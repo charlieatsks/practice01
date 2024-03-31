@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Design website | Vanilla Javascript</title>
+    <link rel="stylesheet" href="istyle01.css">
+</head>
+<body>
+    <header>
+        <a href="" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="" alt="" id="stars">
+        <img src="images/moon.png" id="moon">
+        <img src="images/mountains_cleft_view_from_bottom_night_scenery_landscape_with_high.jpg" id="mountains_behind">
+        <h2 id="text" >Moon Light</h2>
+        <a href="#sec" id="btn" >Explore</a>
+        <img src="images/Untitled-1.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects </h2>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ad amet culpa architecto velit sequi! Quis nam commodi possimus est et minima ad asperiores, cupiditate ut mollitia error consectetur similique. <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ad amet culpa architecto velit sequi! Quis nam commodi possimus est et minima ad asperiores, cupiditate ut mollitia error consectetur similique.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ad amet culpa architecto velit sequi! Quis nam commodi possimus est et minima ad asperiores, cupiditate ut mollitia error consectetur similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ad amet culpa architecto velit sequi! Quis nam commodi possimus est et minima ad asperiores, cupiditate ut mollitia error consectetur similique. <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ad amet culpa architecto velit sequi! Quis nam commodi possimus est et minima ad asperiores, cupiditate ut mollitia error consectetur similique.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ad amet culpa architecto velit sequi! Quis nam commodi possimus est et minima ad asperiores, cupiditate ut mollitia error consectetur similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ad amet culpa architecto velit sequi! Quis nam commodi possimus est et minima ad asperiores, cupiditate ut mollitia error consectetur similique. <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ad amet culpa architecto velit sequi! Quis nam commodi possimus est et minima ad asperiores, cupiditate ut mollitia error consectetur similique.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id reprehenderit. Sit hic nihil dolores tenetur omnis quam unde doloribus vel sed vitae quasi, dolorem similique commodi. Nihil, rerum quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ad amet culpa architecto velit sequi! Quis nam commodi possimus est et minima ad asperiores, cupiditate ut mollitia error consectetur similique.  </p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
