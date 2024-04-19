@@ -2,16 +2,17 @@ const input = document.querySelector("input");
 const addButton = document.querySelector(".add-button");
 const todosHtml = document.querySelector(".todos");
 const emptyImage = document.querySelector(".empty-images");
-
 let todosJson = JSON.parse(localStorage.getItem("todos")) || [];
-/*
 const deleteAllButton = document.querySelector(".delete-all");
 const filters = document.querySelectorAll(".filter");
 let filter = '';
-*/
+
+showTodos();
 
 function getTodoHtml(todo, index) {
-    
+    if (filter && filter != todo.status) {
+        return '';
+    }
     let checked = todo.status == "completed" ? "checked" : "";
     return /* HTML */`
         <li class="todo">
@@ -23,7 +24,6 @@ function getTodoHtml(todo, index) {
         </li>
     `;
 }
-
 
 function showTodos() {
     if(todosJson.length == 0){
@@ -57,23 +57,7 @@ addButton.addEventListener("click", () => {
     }
     addTodo(todo);
 });
-
-
-
-
-/*const input = document.querySelector("input");
-const addButton = document.querySelector(".add-button");
-const todosHtml = document.querySelector(".todos");
-const emptyImage = document.querySelector(".em-images");
-let todosJson = JSON.parse(localStorage.getItem("todos")) || [];
-const deleteAllButton = document.querySelector(".delete-all");
-const filters = document.querySelectorAll(".filter");
-let filter = '';
-
-showTodos();
-
-
-
+/*
 function updateStatus(todo) {
     let todoName = todo.parentElement.lastElementClild;
     if (todo.checked) {
@@ -85,7 +69,7 @@ function updateStatus(todo) {
     }
     localStorage.setItem("todos", JSON.stringify(todosJson));
 }
-
+*/
 function remove(todo) {
     const index = todo.dataset.index;
     todosJson.splice(index, 1);
@@ -112,7 +96,4 @@ deleteAllButton.addEventListener("click", () => {
     localStorage.setItem("todos", JSON.stringify(todosJson));
     showTodos();
 });
-
-
-*/
 
