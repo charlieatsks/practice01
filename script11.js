@@ -14,7 +14,7 @@ async function searchImages(){
     // page above for content
     // keyword above is for search keyword
     // accessKey is to excess the details
-    
+
     const response = await fetch(url);
     const data = await response.json();
 
@@ -38,13 +38,16 @@ async function searchImages(){
     showMoreBtn.style.display = "block";
 }
 
+
 searchForm.addEventListener("submit", (e) =>{
     e.preventDefault();
     page = 1;
     searchImages();
 })
 
+
 showMoreBtn.addEventListener("click", ()=>{
     page++;
     searchImages();
 })
+
